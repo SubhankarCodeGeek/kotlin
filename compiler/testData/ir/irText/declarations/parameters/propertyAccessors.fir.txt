@@ -43,17 +43,17 @@ FILE fqName:<root> fileName:/propertyAccessors.kt
         RETURN type=kotlin.Nothing from='public final fun <get-testExt3> <T> (): kotlin.Int declared in <root>'
           CONST Int type=kotlin.Int value=42
   PROPERTY name:testExt4 visibility:public modality:FINAL [var]
-    FUN name:<get-testExt4> visibility:public modality:FINAL <T> ($receiver:T of <root>.<set-testExt4>) returnType:kotlin.Int
+    FUN name:<get-testExt4> visibility:public modality:FINAL <T> ($receiver:T of <root>.<get-testExt4>) returnType:kotlin.Int
       correspondingProperty: PROPERTY name:testExt4 visibility:public modality:FINAL [var]
       TYPE_PARAMETER name:T index:0 variance: superTypes:[kotlin.Any?]
-      $receiver: VALUE_PARAMETER name:<this> type:T of <root>.<set-testExt4>
+      $receiver: VALUE_PARAMETER name:<this> type:T of <root>.<get-testExt4>
       BLOCK_BODY
         RETURN type=kotlin.Nothing from='public final fun <get-testExt4> <T> (): kotlin.Int declared in <root>'
           CONST Int type=kotlin.Int value=42
-    FUN name:<set-testExt4> visibility:public modality:FINAL <T> ($receiver:T of <root>.<set-testExt4>, value:kotlin.Int) returnType:kotlin.Unit
+    FUN name:<set-testExt4> visibility:public modality:FINAL <T> ($receiver:T of <root>.<get-testExt4>, value:kotlin.Int) returnType:kotlin.Unit
       correspondingProperty: PROPERTY name:testExt4 visibility:public modality:FINAL [var]
       TYPE_PARAMETER name:T index:0 variance: superTypes:[kotlin.Any?]
-      $receiver: VALUE_PARAMETER name:<this> type:T of <root>.<set-testExt4>
+      $receiver: VALUE_PARAMETER name:<this> type:T of <root>.<get-testExt4>
       VALUE_PARAMETER name:value index:0 type:kotlin.Int
       BLOCK_BODY
   CLASS CLASS name:Host modality:FINAL visibility:public superTypes:[kotlin.Any]
@@ -114,19 +114,19 @@ FILE fqName:<root> fileName:/propertyAccessors.kt
           RETURN type=kotlin.Nothing from='public final fun <get-testMemExt3> <TT> (): kotlin.Int declared in <root>.Host'
             CONST Int type=kotlin.Int value=42
     PROPERTY name:testMemExt4 visibility:public modality:FINAL [var]
-      FUN name:<get-testMemExt4> visibility:public modality:FINAL <TT> ($this:<root>.Host<T of <root>.Host>, $receiver:TT of <root>.Host.<set-testMemExt4>) returnType:kotlin.Int
+      FUN name:<get-testMemExt4> visibility:public modality:FINAL <TT> ($this:<root>.Host<T of <root>.Host>, $receiver:TT of <root>.Host.<get-testMemExt4>) returnType:kotlin.Int
         correspondingProperty: PROPERTY name:testMemExt4 visibility:public modality:FINAL [var]
         TYPE_PARAMETER name:TT index:0 variance: superTypes:[kotlin.Any?]
         $this: VALUE_PARAMETER name:<this> type:<root>.Host<T of <root>.Host>
-        $receiver: VALUE_PARAMETER name:<this> type:TT of <root>.Host.<set-testMemExt4>
+        $receiver: VALUE_PARAMETER name:<this> type:TT of <root>.Host.<get-testMemExt4>
         BLOCK_BODY
           RETURN type=kotlin.Nothing from='public final fun <get-testMemExt4> <TT> (): kotlin.Int declared in <root>.Host'
             CONST Int type=kotlin.Int value=42
-      FUN name:<set-testMemExt4> visibility:public modality:FINAL <TT> ($this:<root>.Host<T of <root>.Host>, $receiver:TT of <root>.Host.<set-testMemExt4>, value:kotlin.Int) returnType:kotlin.Unit
+      FUN name:<set-testMemExt4> visibility:public modality:FINAL <TT> ($this:<root>.Host<T of <root>.Host>, $receiver:TT of <root>.Host.<get-testMemExt4>, value:kotlin.Int) returnType:kotlin.Unit
         correspondingProperty: PROPERTY name:testMemExt4 visibility:public modality:FINAL [var]
         TYPE_PARAMETER name:TT index:0 variance: superTypes:[kotlin.Any?]
         $this: VALUE_PARAMETER name:<this> type:<root>.Host<T of <root>.Host>
-        $receiver: VALUE_PARAMETER name:<this> type:TT of <root>.Host.<set-testMemExt4>
+        $receiver: VALUE_PARAMETER name:<this> type:TT of <root>.Host.<get-testMemExt4>
         VALUE_PARAMETER name:value index:0 type:kotlin.Int
         BLOCK_BODY
     FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN <> ($this:kotlin.Any, other:kotlin.Any?) returnType:kotlin.Boolean [fake_override,operator]

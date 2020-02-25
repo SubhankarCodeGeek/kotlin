@@ -59,7 +59,7 @@ class Fir2IrDeclarationStorage(
 
     private val classCache = mutableMapOf<FirRegularClass, IrClass>()
 
-    private val typeParameterCache = mutableMapOf<FirTypeParameter, IrTypeParameter>()
+    private val typeParameterCache = mutableMapOf<Pair<FirTypeParameter, Boolean>, IrTypeParameter>()
 
     private val functionCache = mutableMapOf<FirSimpleFunction, IrSimpleFunction>()
 
@@ -148,12 +148,15 @@ class Fir2IrDeclarationStorage(
     private fun preCacheTypeParameters(owner: FirTypeParametersOwner) {
         owner.typeParameters.mapIndexed { index, typeParameter ->
             getIrTypeParameter(typeParameter, index)
+            if (owner is FirProperty && owner.isVar) {
+                getIrTypeParameter(typeParameter, index, forSetter = true)
+            }
         }
     }
 
-    private fun IrTypeParametersContainer.setTypeParameters(owner: FirTypeParametersOwner) {
+    private fun IrTypeParametersContainer.setTypeParameters(owner: FirTypeParametersOwner, forSetter: Boolean = false) {
         typeParameters = owner.typeParameters.mapIndexed { index, typeParameter ->
-            getIrTypeParameter(typeParameter, index).apply { parent = this@setTypeParameters }
+            getIrTypeParameter(typeParameter, index, forSetter).apply { parent = this@setTypeParameters }
         }
     }
 
@@ -324,8 +327,8 @@ class Fir2IrDeclarationStorage(
     }
 
     // TODO: change index default to -1
-    private fun getIrTypeParameter(typeParameter: FirTypeParameter, index: Int = 0): IrTypeParameter {
-        return typeParameterCache[typeParameter] ?: typeParameter.run {
+    private fun getIrTypeParameter(typeParameter: FirTypeParameter, index: Int = 0, forSetter: Boolean = false): IrTypeParameter {
+        return typeParameterCache[typeParameter to forSetter] ?: typeParameter.run {
             // Yet I don't want to enable this requirement because it breaks some tests
             // However, if we get here it *should* mean that type parameter index is given explicitly
             // At this moment (20.02.2020) this requirement breaks 11/355 Fir2IrText tests
@@ -347,7 +350,7 @@ class Fir2IrDeclarationStorage(
                 }
 
             // Cache the type parameter BEFORE processing its bounds/supertypes, to properly handle recursive type bounds.
-            typeParameterCache[typeParameter] = irTypeParameter
+            typeParameterCache[typeParameter to forSetter] = irTypeParameter
             bounds.mapTo(irTypeParameter.superTypes) { it.toIrType(session, this@Fir2IrDeclarationStorage) }
             irTypeParameter
         }
@@ -626,7 +629,7 @@ class Fir2IrDeclarationStorage(
                 if (propertyAccessor == null && isSetter) {
                     declareDefaultSetterParameter(propertyType)
                 }
-                setTypeParameters(property)
+                setTypeParameters(property, forSetter = isSetter)
             }.bindAndDeclareParameters(
                 propertyAccessor, descriptor, irParent, isStatic = irParent !is IrClass, shouldLeaveScope = true,
                 parentPropertyReceiverType = property.receiverTypeRef
