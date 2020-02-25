@@ -90,7 +90,7 @@ class KotlinMocha(override val compilation: KotlinJsCompilation) :
             add(adapter.canonicalPath)
             addAll(cliArgs.toList())
             addAll(cliArg("--reporter", "kotlin-test-js-runner/mocha-kotlin-reporter.js"))
-            addAll(cliArg("--timeout", timeout))
+            addAll(cliArg("--timeout", if (debug) "0" else timeout))
         }
 
         return TCServiceMessagesTestExecutionSpec(
