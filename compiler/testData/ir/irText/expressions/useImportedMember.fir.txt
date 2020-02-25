@@ -232,7 +232,7 @@ FILE fqName:<root> fileName:/useImportedMember.kt
           if: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=EXCLEQ
             $this: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL 'public final fun <get-g2> <T> (): T of <root>.C.<get-g2> declared in <root>.C' type=kotlin.String origin=null
-                <T>: <none>
+                <T>: kotlin.String
                 $this: CONST String type=kotlin.String value="8"
                 $receiver: CONST String type=kotlin.String value="8"
               arg1: CONST String type=kotlin.String value="8"
@@ -254,7 +254,7 @@ FILE fqName:<root> fileName:/useImportedMember.kt
           if: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=EXCLEQ
             $this: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EXCLEQ
               arg0: CALL 'public final fun <get-fromClass> <T> (): T of <root>.BaseClass.<get-fromClass> declared in <root>.BaseClass' type=kotlin.String origin=null
-                <T>: <none>
+                <T>: kotlin.String
                 $this: CONST String type=kotlin.String value="10"
                 $receiver: CONST String type=kotlin.String value="10"
               arg1: CONST String type=kotlin.String value="10"
