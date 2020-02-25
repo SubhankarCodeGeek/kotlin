@@ -19,12 +19,12 @@ FILE fqName:<root> fileName:/delegatedGenericImplementation.kt
         TYPE_PARAMETER name:D index:0 variance: superTypes:[kotlin.Any?]
         $this: VALUE_PARAMETER name:<this> type:<root>.IBase<A of <root>.IBase>
         $receiver: VALUE_PARAMETER name:<this> type:kotlin.collections.List<D of <root>.IBase.<get-x>>
-      FUN DEFAULT_PROPERTY_ACCESSOR name:<set-x> visibility:public modality:ABSTRACT <D> ($this:<root>.IBase<A of <root>.IBase>, $receiver:kotlin.collections.List<D of <root>.IBase.<get-x>>, <set-?>:D of <root>.IBase.<get-x>?) returnType:kotlin.Unit
+      FUN DEFAULT_PROPERTY_ACCESSOR name:<set-x> visibility:public modality:ABSTRACT <D> ($this:<root>.IBase<A of <root>.IBase>, $receiver:kotlin.collections.List<D of <root>.IBase.<get-x>>, <set-?>:D of <root>.IBase.<set-x>?) returnType:kotlin.Unit
         correspondingProperty: PROPERTY name:x visibility:public modality:ABSTRACT [var]
         TYPE_PARAMETER name:D index:0 variance: superTypes:[kotlin.Any?]
         $this: VALUE_PARAMETER name:<this> type:<root>.IBase<A of <root>.IBase>
         $receiver: VALUE_PARAMETER name:<this> type:kotlin.collections.List<D of <root>.IBase.<get-x>>
-        VALUE_PARAMETER name:<set-?> index:0 type:D of <root>.IBase.<get-x>?
+        VALUE_PARAMETER name:<set-?> index:0 type:D of <root>.IBase.<set-x>?
     FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN <> ($this:kotlin.Any, other:kotlin.Any?) returnType:kotlin.Boolean [fake_override,operator]
       overridden:
         public open fun equals (other: kotlin.Any?): kotlin.Boolean [operator] declared in kotlin.Any
@@ -65,12 +65,12 @@ FILE fqName:<root> fileName:/delegatedGenericImplementation.kt
         overridden:
           public abstract fun <get-x> <D> (): D of <root>.IBase.<get-x>? declared in <root>.IBase
         $this: VALUE_PARAMETER name:<this> type:<root>.Test1<E of <root>.Test1>
-      FUN FAKE_OVERRIDE name:<set-x> visibility:public modality:ABSTRACT <> ($this:<root>.Test1<E of <root>.Test1>, <set-?>:D of <root>.IBase.<get-x>?) returnType:kotlin.Unit [fake_override]
+      FUN FAKE_OVERRIDE name:<set-x> visibility:public modality:ABSTRACT <> ($this:<root>.Test1<E of <root>.Test1>, <set-?>:D of <root>.IBase.<set-x>?) returnType:kotlin.Unit [fake_override]
         correspondingProperty: PROPERTY FAKE_OVERRIDE name:x visibility:public modality:ABSTRACT [fake_override,var]
         overridden:
-          public abstract fun <set-x> <D> (<set-?>: D of <root>.IBase.<get-x>?): kotlin.Unit declared in <root>.IBase
+          public abstract fun <set-x> <D> (<set-?>: D of <root>.IBase.<set-x>?): kotlin.Unit declared in <root>.IBase
         $this: VALUE_PARAMETER name:<this> type:<root>.Test1<E of <root>.Test1>
-        VALUE_PARAMETER name:<set-?> index:0 type:D of <root>.IBase.<get-x>?
+        VALUE_PARAMETER name:<set-?> index:0 type:D of <root>.IBase.<set-x>?
     FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN <> ($this:kotlin.Any, other:kotlin.Any?) returnType:kotlin.Boolean [fake_override,operator]
       overridden:
         public open fun equals (other: kotlin.Any?): kotlin.Boolean [operator] declared in kotlin.Any
@@ -129,12 +129,12 @@ FILE fqName:<root> fileName:/delegatedGenericImplementation.kt
         overridden:
           public abstract fun <get-x> <D> (): D of <root>.IBase.<get-x>? declared in <root>.IBase
         $this: VALUE_PARAMETER name:<this> type:<root>.Test2
-      FUN FAKE_OVERRIDE name:<set-x> visibility:public modality:ABSTRACT <> ($this:<root>.Test2, <set-?>:D of <root>.IBase.<get-x>?) returnType:kotlin.Unit [fake_override]
+      FUN FAKE_OVERRIDE name:<set-x> visibility:public modality:ABSTRACT <> ($this:<root>.Test2, <set-?>:D of <root>.IBase.<set-x>?) returnType:kotlin.Unit [fake_override]
         correspondingProperty: PROPERTY FAKE_OVERRIDE name:x visibility:public modality:ABSTRACT [fake_override,var]
         overridden:
-          public abstract fun <set-x> <D> (<set-?>: D of <root>.IBase.<get-x>?): kotlin.Unit declared in <root>.IBase
+          public abstract fun <set-x> <D> (<set-?>: D of <root>.IBase.<set-x>?): kotlin.Unit declared in <root>.IBase
         $this: VALUE_PARAMETER name:<this> type:<root>.Test2
-        VALUE_PARAMETER name:<set-?> index:0 type:D of <root>.IBase.<get-x>?
+        VALUE_PARAMETER name:<set-?> index:0 type:D of <root>.IBase.<set-x>?
     FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN <> ($this:kotlin.Any, other:kotlin.Any?) returnType:kotlin.Boolean [fake_override,operator]
       overridden:
         public open fun equals (other: kotlin.Any?): kotlin.Boolean [operator] declared in kotlin.Any
